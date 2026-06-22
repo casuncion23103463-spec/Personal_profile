@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clark Asuncion — Profile</title>
+<style>
+  :root{
+    --bg:#0d1117;
+    --bg-panel:#11161d;
+    --line:#22272f;
+    --text:#e6edf3;
+    --muted:#7d8590;
+    --accent:#7ee787;
+    --accent-dim:#2ea04326;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'SF Mono','Consolas','Menlo',monospace;
+    line-height:1.6;
+    padding:40px 20px;
+  }
+  .wrap{max-width:680px; margin:0 auto;}
+
+  .terminal{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .titlebar{
+    display:flex; align-items:center; gap:8px;
+    padding:10px 14px;
+    border-bottom:1px solid var(--line);
+    background:#161b22;
+  }
+  .dot{width:11px; height:11px; border-radius:50%;}
+  .dot.r{background:#ff5f56;}
+  .dot.y{background:#ffbd2e;}
+  .dot.g{background:#27c93f;}
+  .titlebar span{margin-left:8px; color:var(--muted); font-size:13px;}
+
+  .body{padding:28px 26px 34px;}
+
+  .prompt{color:var(--accent); font-size:14px;}
+  .prompt .path{color:#79c0ff;}
+
+  h1{
+    font-size:28px;
+    margin:14px 0 4px;
+    letter-spacing:-0.5px;
+  }
+  h1 .cursor{
+    display:inline-block;
+    width:10px; height:24px;
+    background:var(--accent);
+    margin-left:6px;
+    animation:blink 1.1s steps(1) infinite;
+    vertical-align:-3px;
+  }
+  @keyframes blink{50%{opacity:0;}}
+
+  .role{color:var(--muted); font-size:15px; margin-bottom:26px;}
+
+  .section{margin-top:30px;}
+  .section-label{
+    color:var(--accent);
+    font-size:13px;
+    text-transform:lowercase;
+    margin-bottom:10px;
+  }
+  .section-label::before{content:"$ "; color:var(--muted);}
+
+  .stack{display:flex; flex-wrap:wrap; gap:10px;}
+  .chip{
+    border:1px solid var(--line);
+    background:var(--accent-dim);
+    color:var(--accent);
+    padding:6px 12px;
+    border-radius:6px;
+    font-size:13px;
+  }
+
+  .about-text{color:var(--text); font-size:15px;}
+  .about-text .k{color:#79c0ff;}
+
+  .links{display:flex; flex-wrap:wrap; gap:14px; margin-top:8px;}
+  .links a{
+    color:var(--text);
+    text-decoration:none;
+    border:1px solid var(--line);
+    padding:8px 14px;
+    border-radius:6px;
+    font-size:14px;
+    transition:border-color .15s, color .15s;
+  }
+  .links a:hover, .links a:focus-visible{
+    border-color:var(--accent);
+    color:var(--accent);
+  }
+
+  footer{
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
+    margin-top:24px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    h1 .cursor{animation:none;}
+  }
+
+  @media (max-width:480px){
+    .body{padding:22px 18px 28px;}
+    h1{font-size:23px;}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="terminal">
+      <div class="titlebar">
+        <div class="dot r"></div>
+        <div class="dot y"></div>
+        <div class="dot g"></div>
+        <span>clark@portfolio: ~</span>
+      </div>
+
+      <div class="body">
+        <div class="prompt">visitor@web <span class="path">~/clark</span> $ whoami</div>
+        <h1>Clark Asuncion<span class="cursor"></span></h1>
+        <div class="role">BS Computer Science Student</div>
+
+        <div class="section">
+          <div class="section-label">cat about.txt</div>
+          <p class="about-text">
+            I'm a <span class="k">Computer Science</span> student who enjoys building things
+            for the web and solving problems with code. Currently sharpening my skills in
+            <span class="k">HTML</span>, <span class="k">CSS</span>, and <span class="k">Java</span>,
+            with a growing interest in software development and web technologies.
+          </p>
+        </div>
+
+        <div class="section">
+          <div class="section-label">ls skills/</div>
+          <div class="stack">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">Java</span>
+            <span class="chip">Git &amp; GitHub</span>
+            <span class="chip">Problem Solving</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">cat contact.txt</div>
+          <div class="links">
+            <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            <a href="mailto:clark.asuncion@example.com">Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>Built with HTML &amp; CSS · Hosted on GitHub Pages</footer>
+  </div>
+</body>
+</html>
