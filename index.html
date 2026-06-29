@@ -12,6 +12,10 @@
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Firebase SDKs (Connects to Cloud Database) -->
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-compat.js"></script>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -157,7 +161,7 @@
                     <h3 class="info-heading">Let's Connect!</h3>
                     <p class="info-desc">
                         I am always excited to connect with fellow developers, potential collaborators, or anyone interested in tech. 
-                        If you have a project in mind or just want to chat about software, feel free to reach out through any of the platforms below!
+                        If you have a project in mind or just want to chat about software, feel free to reach out!
                     </p>
                     <div class="info-list">
                         <div class="info-row">
@@ -223,12 +227,14 @@
             <div class="footer-divider"></div>
             <div class="footer-bottom">
                 <p class="copyright-text">&copy; 2026 Clark Asuncion. All rights reserved.</p>
-                <p class="credits-text">Developed with <i class="fa-solid fa-heart" style="color: #ff3b30;"></i> for the Software Engineering Midterm Project</p>
+                <p class="credits-text">Built with <i class="fa-solid fa-heart" style="color: #ff3b30;"></i> for Software Engineering Midterm</p>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- ==========================================
+    JAVASCRIPT (FIREBASE LOGIC)
+    ========================================== -->
     <script>
         // 1. Navbar Scroll
         const navbar = document.querySelector('.navbar');
@@ -245,40 +251,57 @@
             });
         });
 
-        // 3. Mailer Form Submission
+        // ==========================================
+        // 3. FIREBASE CONFIGURATION (UPDATED WITH YOUR REAL KEYS)
+        // ==========================================
+        const firebaseConfig = {
+            apiKey: "AIzaSyAIir4G6_htFKcGYiqC9951HmvBsAAAwRo",
+            authDomain: "personal-portfolio-conta-5df66.firebaseapp.com",
+            projectId: "personal-portfolio-conta-5df66",
+            storageBucket: "personal-portfolio-conta-5df66.firebasestorage.app",
+            messagingSenderId: "785786424211",
+            appId: "1:785786424211:web:97c4d3dd84686d533666"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore(); // Connect to the cloud database
+
+        // ==========================================
+        // 4. FORM SUBMISSION LOGIC
+        // ==========================================
         const form = document.getElementById('contactForm');
         const submitBtn = document.getElementById('submitBtn');
-        const backendURL = 'https://portfolio-mailer-abdj.onrender.com/send-email'; 
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'Sending...';
+            submitBtn.innerHTML = 'Saving to Cloud...';
             submitBtn.disabled = true;
 
+            // Get data from form
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
             try {
-                const response = await fetch(backendURL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
+                // SAVE THE DATA TO FIREBASE CLOUD DATABASE (FIRESTORE)
+                await db.collection("messages").add({
+                    name: data.name,
+                    email: data.email,
+                    subject: data.subject,
+                    message: data.message,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp() // Auto-record time
                 });
 
-                const result = await response.json();
+                alert('Message sent successfully! Saved to cloud database.');
+                form.reset(); // Clear the input fields
 
-                if (result.success) {
-                    alert('Message sent successfully! I will get back to you soon.');
-                    form.reset();
-                } else {
-                    alert('Failed to send message. Please try again later.');
-                }
             } catch (error) {
-                console.error('Error:', error);
-                alert('Network error. Please check your connection.');
+                console.error("Firebase Error:", error);
+                alert('Failed to save message. Please try again.');
             } finally {
+                // Reset button
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }
