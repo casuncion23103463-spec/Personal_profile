@@ -10,10 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome for Icons -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Firebase SDKs (Connects to Cloud Database) -->
+    <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-compat.js"></script>
 
@@ -35,7 +35,7 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section class="hero-top">
         <div class="container hero-content">
             <span class="rune-tag"><i class="fa-solid fa-compass"></i></span>
             <h1 class="hero-title">Clark Asuncion</h1>
@@ -53,30 +53,51 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section-padding bg-darker">
-        <div class="container split-layout">
-            <div class="text-content">
+    <!-- REDESIGNED ABOUT SECTION -->
+    <section id="about" class="section-padding unified-bg">
+        <div class="container centered-about">
+            <div class="about-content">
                 <div class="badge">About</div>
                 <h2>About Me</h2>
-                <p>I am currently a 4th-year Computer Science student at Don Mariano Marcos Memorial State University (SLUC). My passion lies in web development, where I enjoy transforming complex challenges into simple, elegant user experiences.</p>
-                <p>I pride myself on writing well-structured, maintainable code and embracing new technologies. I am always seeking opportunities to learn, collaborate, and create impactful software solutions that address real-world needs.</p>
                 
-                <div class="info-cards">
-                    <div class="info-item"><h4>Name</h4><p>Clark Asuncion</p></div>
-                    <div class="info-item"><h4>Course</h4><p>BS Computer Science</p></div>
-                    <div class="info-item"><h4>Year</h4><p>4th Year</p></div>
-                    <div class="info-item"><h4>Location</h4><p>Philippines</p></div>
+                <div class="about-glass-card">
+                    <p class="about-intro">
+                        I am currently a 4th-year Computer Science student at Don Mariano Marcos Memorial State University (SLUC). 
+                        My passion lies in web development, where I enjoy transforming complex challenges into simple, elegant user experiences.
+                    </p>
+                    <p>
+                        I pride myself on writing well-structured, maintainable code and embracing new technologies. 
+                        I am always seeking opportunities to learn, collaborate, and create impactful software solutions that address real-world needs.
+                    </p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">4th</span>
+                            <span class="stat-label">Year Student</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects Built</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Curiosity</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="image-content">
-                <img src="images/voyage-img.jpg" alt="Misty fjord landscape">
+                
+                <div class="about-info-grid">
+                    <div class="info-pill"><i class="fa-solid fa-user"></i> Clark Asuncion</div>
+                    <div class="info-pill"><i class="fa-solid fa-laptop-code"></i> BS Computer Science</div>
+                    <div class="info-pill"><i class="fa-solid fa-calendar"></i> 4th Year</div>
+                    <div class="info-pill"><i class="fa-solid fa-map-pin"></i> Philippines</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- EDUCATION SECTION -->
-    <section id="education" class="section-padding bg-dark">
+    <section id="education" class="section-padding unified-bg">
         <div class="container">
             <div class="section-header">
                 <div class="badge">Education</div>
@@ -100,7 +121,7 @@
     </section>
 
     <!-- SKILLS SECTION -->
-    <section class="section-padding bg-darker">
+    <section class="section-padding unified-bg">
         <div class="container">
             <div class="section-header">
                 <div class="badge">Skills</div>
@@ -116,8 +137,10 @@
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="section-padding bg-dark">
+    <!-- ==========================================
+    PROJECTS SECTION (NOW CLICKABLE)
+    ========================================== -->
+    <section id="projects" class="section-padding unified-bg">
         <div class="container">
             <div class="section-header">
                 <div class="badge">Projects</div>
@@ -125,68 +148,52 @@
                 <p class="sub-headline">A showcase of my work and learning journey.</p>
             </div>
             <div class="grid-3">
-                <div class="project-card">
-                    <div class="project-top"><span class="project-type">Frontend Dev</span><i class="fa-solid fa-arrow-up-right-from-square link-icon"></i></div>
-                    <h3>Interactive Profile</h3>
-                    <p>A fully responsive personal portfolio designed to showcase projects and skills with a clean, modern aesthetic.</p>
-                    <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
-                </div>
-                <div class="project-card">
-                    <div class="project-top"><span class="project-type">Full Stack</span><i class="fa-solid fa-arrow-up-right-from-square link-icon"></i></div>
-                    <h3>Content Management System</h3>
-                    <p>A dynamic blog application featuring user authentication, post creation, and database integration.</p>
-                    <div class="tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
-                </div>
-                <div class="project-card">
-                    <div class="project-top"><span class="project-type">Data Science</span><i class="fa-solid fa-arrow-up-right-from-square link-icon"></i></div>
-                    <h3>Sentiment Analysis Research</h3>
-                    <p>An academic research project focused on applying natural language processing (NLP) to analyze public sentiment.</p>
-                    <div class="tags"><span>Python</span><span>NLP</span></div>
-                </div>
+                
+                <!-- Card 1: Links to GitHub Repo -->
+                <a href="https://github.com/casuncion23103463-spec/Personal_profile" target="_blank" class="project-link-wrapper">
+                    <div class="project-card">
+                        <div class="project-top">
+                            <span class="project-type">Web Dev</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
+                        </div>
+                        <h3>Interactive Profile</h3>
+                        <p>A fully responsive personal portfolio designed to showcase projects and skills with a clean, modern aesthetic.</p>
+                        <div class="tags">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 2: Links to Vercel Portfolio -->
+                <a href="https://esports-analyst.vercel.app" target="_blank" class="project-link-wrapper">
+                    <div class="project-card">
+                        <div class="project-top">
+                            <span class="project-type">Hosting</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
+                        </div>
+                        <h3>Vercel Portfolio</h3>
+                        <p>An alternate live deployment of my profile hosted on Vercel. Showcases a modern frontend deployment pipeline.</p>
+                        <div class="tags">
+                            <span>Vercel</span><span>Deployment</span><span>Live</span>
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="section-padding bg-darker">
+    <section id="contact" class="section-padding unified-bg">
         <div class="container">
             <div class="contact-header text-center">
                 <div class="badge">CONTACT</div>
                 <h2 class="contact-title-dark">Get In Touch</h2>
                 <div class="underline-purple"></div>
             </div>
+            <p class="contact-sub-desc">Have a question or want to work together? Send me a message!</p>
 
-            <div class="contact-split">
-                <div class="contact-info">
-                    <h3 class="info-heading">Let's Connect!</h3>
-                    <p class="info-desc">
-                        I am always excited to connect with fellow developers, potential collaborators, or anyone interested in tech. 
-                        If you have a project in mind or just want to chat about software, feel free to reach out!
-                    </p>
-                    <div class="info-list">
-                        <div class="info-row">
-                            <div class="icon-circle"><i class="fa-regular fa-envelope"></i></div>
-                            <div><span class="info-label">EMAIL</span><p class="info-value">clarkasuncion000@gmail.com</p></div>
-                        </div>
-                        <div class="info-row">
-                            <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
-                            <div><span class="info-label">PHONE</span><p class="info-value">+63 947 599 2055</p></div>
-                        </div>
-                        <div class="info-row">
-                            <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
-                            <div><span class="info-label">LOCATION</span><p class="info-value">Philippines</p></div>
-                        </div>
-                        <div class="info-row">
-                            <div class="icon-circle"><i class="fa-brands fa-github"></i></div>
-                            <div><span class="info-label">GITHUB</span><p class="info-value">casuncion23103463-spec</p></div>
-                        </div>
-                        <div class="info-row">
-                            <div class="icon-circle"><i class="fa-solid fa-link"></i></div>
-                            <div><span class="info-label">BLOG</span><p class="info-value">esports-analyst.vercel.app</p></div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="centered-form-container">
                 <div class="contact-form-wrapper">
                     <form class="contact-form-light" id="contactForm">
                         <div class="form-group">
@@ -217,9 +224,7 @@
                 <h3 class="footer-name">Clark Asuncion</h3>
                 <p class="footer-title">BS Computer Science | DMMMSU-SLUC</p>
                 <div class="footer-socials">
-                    <a href="#" class="social-icon"><i class="fa-solid fa-location-dot"></i></a>
                     <a href="https://github.com/casuncion23103463-spec" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="mailto:clarkasuncion000@gmail.com" class="social-icon"><i class="fa-regular fa-envelope"></i></a>
                     <a href="https://esports-analyst.vercel.app" target="_blank" class="social-icon"><i class="fa-solid fa-link"></i></a>
                 </div>
@@ -227,22 +232,26 @@
             <div class="footer-divider"></div>
             <div class="footer-bottom">
                 <p class="copyright-text">&copy; 2026 Clark Asuncion. All rights reserved.</p>
-                <p class="credits-text">Built with <i class="fa-solid fa-heart" style="color: #ff3b30;"></i> for Software Engineering Midterm</p>
             </div>
         </div>
     </footer>
 
-    <!-- ==========================================
-    JAVASCRIPT (FIREBASE LOGIC)
-    ========================================== -->
+    <!-- TOAST NOTIFICATION -->
+    <div id="customNotification" class="notification hidden">
+        <div class="notif-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="notif-text">
+            <h4>Success!</h4>
+            <p>Your message has been saved to the cloud database.</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
     <script>
-        // 1. Navbar Scroll
         const navbar = document.querySelector('.navbar');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // 2. Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -251,9 +260,6 @@
             });
         });
 
-        // ==========================================
-        // 3. FIREBASE CONFIGURATION (UPDATED WITH YOUR REAL KEYS)
-        // ==========================================
         const firebaseConfig = {
             apiKey: "AIzaSyAIir4G6_htFKcGYiqC9951HmvBsAAAwRo",
             authDomain: "personal-portfolio-conta-5df66.firebaseapp.com",
@@ -262,46 +268,43 @@
             messagingSenderId: "785786424211",
             appId: "1:785786424211:web:97c4d3dd84686d533666"
         };
-
-        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore(); // Connect to the cloud database
+        const db = firebase.firestore();
 
-        // ==========================================
-        // 4. FORM SUBMISSION LOGIC
-        // ==========================================
         const form = document.getElementById('contactForm');
         const submitBtn = document.getElementById('submitBtn');
+        const notification = document.getElementById('customNotification');
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = 'Saving to Cloud...';
             submitBtn.disabled = true;
 
-            // Get data from form
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
 
             try {
-                // SAVE THE DATA TO FIREBASE CLOUD DATABASE (FIRESTORE)
                 await db.collection("messages").add({
                     name: data.name,
                     email: data.email,
                     subject: data.subject,
                     message: data.message,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp() // Auto-record time
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
                 });
+                
+                notification.classList.remove('hidden');
+                notification.classList.add('show');
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    notification.classList.add('hidden');
+                }, 5000);
 
-                alert('Message sent successfully! Saved to cloud database.');
-                form.reset(); // Clear the input fields
-
+                form.reset();
             } catch (error) {
                 console.error("Firebase Error:", error);
                 alert('Failed to save message. Please try again.');
             } finally {
-                // Reset button
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }
